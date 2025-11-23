@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кот против инопланетян</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-wrapper">
+        <h1>Кот против инопланетян</h1>
+        
+        <div id="game-container">
+            <canvas id="game-canvas"></canvas>
+            
+            <div id="hud">
+                <div>Очки: <span id="score">0</span></div>
+                <div>Уровень: <span id="level">1</span></div>
+                <div>Жизни: <span id="lives">3</span></div>
+            </div>
+            
+            <div id="start-screen" class="screen">
+                <h2>Кот против инопланетян</h2>
+                <p>Инопланетяне похитили всех кошек в городе! Только один смелый кот смог сбежать. Помоги ему пройти через крыши небоскребов и добраться до безопасного места!</p>
+                <button id="start-btn" class="btn">Начать игру</button>
+            </div>
+            
+            <div id="instruction-screen" class="screen" style="display: none;">
+                <h2>Как играть</h2>
+                <div class="instruction-content">
+                    <p>Используй <span class="key">ПРОБЕЛ</span> для прыжка. Уворачивайся от препятствий и перепрыгивай на другие крыши.</p>
+                    <p>Собирай рыбу для дополнительных очков. Избегай инопланетян!</p>
+                    <div class="mobile-notice">
+                        На мобильных устройствах используй тап по экрану для прыжка
+                    </div>
+                    <div class="controls-info">
+                        <div class="control-item">
+                            <div class="key-icon space-key"></div>
+                            <span>Прыжок (ПК)</span>
+                        </div>
+                        <div class="control-item">
+                            <div class="key-icon tap-key"></div>
+                            <span>Прыжок (Мобильный)</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="continue-btn" class="btn">Продолжить</button>
+            </div>
+            
+            <div id="level-complete-screen" class="screen" style="display: none;">
+                <h2>Уровень пройден!</h2>
+                <div class="story-text" id="level-story"></div>
+                <p>Очки: <span id="level-score">0</span></p>
+                <button id="next-level-btn" class="btn">Следующий уровень</button>
+            </div>
+            
+            <div id="game-over-screen" class="screen" style="display: none;">
+                <h2>Кот пойман!</h2>
+                <p>Инопланетяне схватили нашего героя.</p>
+                <p>Финальный счет: <span id="final-score">0</span></p>
+                <button id="restart-btn" class="btn">Играть снова</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="levels.js"></script>
+    <script src="graphics.js"></script>
+    <script src="ui.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

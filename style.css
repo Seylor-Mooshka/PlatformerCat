@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#game-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #e94560;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.7);
+    text-align: center;
+}
+
+#game-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    border: 3px solid #e94560;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+}
+
+#game-canvas {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #0f3460, #1a1a2e);
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(26, 26, 46, 0.95);
+    z-index: 10;
+    padding: 20px;
+    text-align: center;
+}
+
+.screen h2 {
+    color: #e94560;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.7);
+}
+
+.screen p {
+    margin: 10px 0;
+    line-height: 1.5;
+    max-width: 600px;
+}
+
+.btn {
+    background: #e94560;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    margin: 15px 5px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 0 #b32c45;
+}
+
+.btn:hover {
+    background: #ff5773;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #b32c45;
+}
+
+.btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #b32c45;
+}
+
+.instruction-content {
+    background: rgba(15, 52, 96, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    max-width: 600px;
+}
+
+.key {
+    background: #0f3460;
+    border: 2px solid #e94560;
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 2px 0 #b32c45;
+}
+
+.controls-info {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.control-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 15px 15px;
+}
+
+.key-icon {
+    width: 60px;
+    height: 60px;
+    background: #0f3460;
+    border: 2px solid #e94560;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 0 #b32c45;
+    font-weight: bold;
+    color: white;
+}
+
+.space-key {
+    width: 120px;
+    position: relative;
+}
+
+.space-key::after {
+    content: "ПРОБЕЛ";
+    font-size: 0.8rem;
+}
+
+.tap-key {
+    width: 80px;
+    position: relative;
+}
+
+.tap-key::after {
+    content: "КЛИК";
+    font-size: 0.8rem;
+}
+
+#hud {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 5;
+    background: rgba(15, 52, 96, 0.7);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    display: flex;
+    gap: 15px;
+}
+
+.story-text {
+    background: rgba(15, 52, 96, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    max-width: 600px;
+}
+
+.mobile-notice {
+    display: none;
+    background: rgba(233, 69, 96, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    #game-container {
+        height: 400px;
+    }
+    
+    .screen h2 {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    #hud {
+        font-size: 1rem;
+        padding: 8px 12px;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .mobile-notice {
+        display: block;
+    }
+    
+    .controls-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
